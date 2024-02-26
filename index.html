@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Room Status</title>
+<style>
+  .room{
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+  }
+  .box1,.box2,.box3,.box4{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+  }
+  .green { background-color: green; }
+  .yellow { background-color: yellow; }
+  .red { background-color: red; }
+  .gray { background-color: gray; }
+.line{
+    display: flex;
+    align-items: center;
+}
+.box1{
+    background-color: green;
+}
+.box2{
+    background-color: yellow;
+}
+.box3{
+    background-color: red;
+}
+.box4{
+    background-color: gray;
+}
+</style>
+</head>
+<body>
+<div class="show">
+    
+    <div class="line"> <div class="box1"></div>AVAILABLE </div>
+    <div class="line"> <div class="box2"></div> CLEAN </div>
+    <div class="line"> <div class="box3"></div> UNAVAILABLE </div>
+    <div class="line"> <div class="box4"></div> BOOKING </div>
+</div>
+<div class="room" id="room102" onclick="changeColor('room102')">102</div>
+<div class="room" id="room103" onclick="changeColor('room103')">103</div>
+<div class="room" id="room106" onclick="changeColor('room106')">106</div>
+<div class="room" id="room202" onclick="changeColor('room202')">202</div>
+<div class="room" id="room203" onclick="changeColor('room203')">203</div>
+<div class="room" id="room206" onclick="changeColor('room206')">206</div>
+<div class="room" id="room002" onclick="changeColor('room002')">002</div>
+
+<script>
+  function changeColor(roomId) {
+    var room = document.getElementById(roomId);
+    if (room.classList.contains("green")) {
+      room.classList.remove("green");
+      room.classList.add("yellow");
+    } else if (room.classList.contains("yellow")) {
+      room.classList.remove("yellow");
+      room.classList.add("red");
+    } else if (room.classList.contains("red")) {
+      room.classList.remove("red");
+      room.classList.add("gray");
+    } else if (room.classList.contains("gray")) {
+      room.classList.remove("gray");
+      room.classList.add("green");
+    } else {
+      room.classList.add("green");
+    }
+  }
+</script>
+
+</body>
+</html>
