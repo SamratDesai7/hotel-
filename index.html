@@ -19,9 +19,41 @@
   .yellow { background-color: yellow; }
   .red { background-color: red; }
   .gray { background-color: gray; }
+  .line{
+    display: flex;
+    align-items: center;
+}
+    .box1,.box2,.box3,.box4{
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+  }
+.box1{
+    background-color: green;
+}
+.box2{
+    background-color: yellow;
+}
+.box3{
+    background-color: red;
+}
+.box4{
+    background-color: gray;
+}
 </style>
 </head>
 <body>
+  <div class="show">
+    
+    <div class="line"> <div class="box1"></div>AVAILABLE </div>
+    <div class="line"> <div class="box2"></div> CLEAN </div>
+    <div class="line"> <div class="box3"></div> UNAVAILABLE </div>
+    <div class="line"> <div class="box4"></div> BOOKING </div>
+</div>
 
 <div class="room" id="room102" onclick="changeColor('room102')">102</div>
 <div class="room" id="room103" onclick="changeColor('room103')">103</div>
